@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_dotnet_app
+    ports:
+      - "8080:80"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
